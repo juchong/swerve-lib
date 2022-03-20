@@ -12,6 +12,7 @@ public class Mk3ModuleConfiguration {
     private double nominalVoltage = 12.0;
     private double driveCurrentLimit = 80.0;
     private double steerCurrentLimit = 20.0;
+    private int statusDelay = 255;
 
     public double getNominalVoltage() {
         return nominalVoltage;
@@ -23,6 +24,10 @@ public class Mk3ModuleConfiguration {
 
     public double getDriveCurrentLimit() {
         return driveCurrentLimit;
+    }
+
+    public int getStatusDelay() {
+        return statusDelay;
     }
 
     public void setDriveCurrentLimit(double driveCurrentLimit) {

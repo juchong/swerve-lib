@@ -13,14 +13,19 @@ import com.swervedrivespecialties.swervelib.ModuleConfiguration;
 public final class Falcon500DriveControllerFactoryBuilder {
     private static final double TICKS_PER_ROTATION = 2048.0;
 
-    private static final int CAN_TIMEOUT_MS = 250;
-    private static final int STATUS_FRAME_GENERAL_PERIOD_MS = 250;
+    private static final int CAN_TIMEOUT_MS = 30;
 
     private double nominalVoltage = Double.NaN;
     private double currentLimit = Double.NaN;
+    private int statusDelay = 255;
 
     public Falcon500DriveControllerFactoryBuilder withVoltageCompensation(double nominalVoltage) {
         this.nominalVoltage = nominalVoltage;
+        return this;
+    }
+
+    public Falcon500DriveControllerFactoryBuilder withStatusDelay(int statusDelay) {
+        this.statusDelay = statusDelay;
         return this;
     }
 
@@ -75,7 +80,7 @@ public final class Falcon500DriveControllerFactoryBuilder {
             CtreUtils.checkCtreError(
                     motor.setStatusFramePeriod(
                             StatusFrameEnhanced.Status_1_General,
-                            STATUS_FRAME_GENERAL_PERIOD_MS,
+                            statusDelay,
                             CAN_TIMEOUT_MS
                     ),
                     "Failed to configure Falcon status frame period"
