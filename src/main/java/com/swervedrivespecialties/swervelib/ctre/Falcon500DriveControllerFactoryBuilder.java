@@ -18,6 +18,7 @@ public final class Falcon500DriveControllerFactoryBuilder {
     private double nominalVoltage = Double.NaN;
     private double currentLimit = Double.NaN;
     private int statusDelay = 255;
+    private int updatePeriod = 100;
 
     public Falcon500DriveControllerFactoryBuilder withVoltageCompensation(double nominalVoltage) {
         this.nominalVoltage = nominalVoltage;
@@ -26,6 +27,11 @@ public final class Falcon500DriveControllerFactoryBuilder {
 
     public Falcon500DriveControllerFactoryBuilder withStatusDelay(int statusDelay) {
         this.statusDelay = statusDelay;
+        return this;
+    }
+
+    public Falcon500DriveControllerFactoryBuilder withReadingUpdatePeriod(int updatePeriod) {
+        this.updatePeriod = updatePeriod;
         return this;
     }
 

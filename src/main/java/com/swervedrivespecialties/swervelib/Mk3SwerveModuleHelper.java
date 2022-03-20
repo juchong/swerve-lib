@@ -24,7 +24,7 @@ public final class Mk3SwerveModuleHelper {
                 .withPidConstants(0.2, 0.0, 0.1)
                 .withCurrentLimit(configuration.getSteerCurrentLimit())
                 .build(new CanCoderFactoryBuilder()
-                        .withReadingUpdatePeriod(100)
+                        .withReadingUpdatePeriod(configuration.getEncoderUpdatePeriod())
                         .build());
     }
 
@@ -66,7 +66,8 @@ public final class Mk3SwerveModuleHelper {
             int steerMotorPort,
             int steerEncoderPort,
             double steerOffset,
-            int statusDelay
+            int statusDelay,
+            int encoderUpdatePeriod
     ) {
         return new SwerveModuleFactory<>(
                 gearRatio.getConfiguration(),
@@ -101,9 +102,10 @@ public final class Mk3SwerveModuleHelper {
             int steerMotorPort,
             int steerEncoderPort,
             double steerOffset,
-            int statusDelay
+            int statusDelay,
+            int encoderUpdatePeriod
     ) {
-        return createFalcon500(container, new Mk3ModuleConfiguration(), gearRatio, driveMotorPort, steerMotorPort, steerEncoderPort, steerOffset, statusDelay);
+        return createFalcon500(container, new Mk3ModuleConfiguration(), gearRatio, driveMotorPort, steerMotorPort, steerEncoderPort, steerOffset, statusDelay, encoderUpdatePeriod);
     }
 
     /**
@@ -124,7 +126,8 @@ public final class Mk3SwerveModuleHelper {
             int steerMotorPort,
             int steerEncoderPort,
             double steerOffset,
-            int statusDelay
+            int statusDelay,
+            int encoderUpdatePeriod
     ) {
         return new SwerveModuleFactory<>(
                 gearRatio.getConfiguration(),
@@ -155,9 +158,10 @@ public final class Mk3SwerveModuleHelper {
             int steerMotorPort,
             int steerEncoderPort,
             double steerOffset,
-            int statusDelay
+            int statusDelay,
+            int encoderUpdatePeriod
     ) {
-        return createFalcon500(new Mk3ModuleConfiguration(), gearRatio, driveMotorPort, steerMotorPort, steerEncoderPort, steerOffset, statusDelay);
+        return createFalcon500(new Mk3ModuleConfiguration(), gearRatio, driveMotorPort, steerMotorPort, steerEncoderPort, steerOffset, statusDelay, encoderUpdatePeriod);
     }
 
     /**

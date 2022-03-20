@@ -50,7 +50,9 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.FRONT_LEFT_MODULE_DRIVE_MOTOR,
                 Constants.FRONT_LEFT_MODULE_STEER_MOTOR,
                 Constants.FRONT_LEFT_MODULE_STEER_ENCODER,
-                Constants.FRONT_LEFT_MODULE_STEER_OFFSET
+                Constants.FRONT_LEFT_MODULE_STEER_OFFSET,
+                Constants.FRONT_LEFT_MODULE_STATUS_PERIOD,
+                Constants.FRONT_LEFT_MODULE_ENCODER_UPDATE_PERIOD
         );
 
         frontRightModule = Mk3SwerveModuleHelper.createFalcon500(
@@ -61,7 +63,9 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.FRONT_RIGHT_MODULE_DRIVE_MOTOR,
                 Constants.FRONT_RIGHT_MODULE_STEER_MOTOR,
                 Constants.FRONT_RIGHT_MODULE_STEER_ENCODER,
-                Constants.FRONT_RIGHT_MODULE_STEER_OFFSET
+                Constants.FRONT_RIGHT_MODULE_STEER_OFFSET,
+                Constants.FRONT_RIGHT_MODULE_STATUS_PERIOD,
+                Constants.FRONT_RIGHT_MODULE_ENCODER_UPDATE_PERIOD
         );
 
         backLeftModule = Mk3SwerveModuleHelper.createFalcon500(
@@ -72,7 +76,9 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.BACK_LEFT_MODULE_DRIVE_MOTOR,
                 Constants.BACK_LEFT_MODULE_STEER_MOTOR,
                 Constants.BACK_LEFT_MODULE_STEER_ENCODER,
-                Constants.BACK_LEFT_MODULE_STEER_OFFSET
+                Constants.BACK_LEFT_MODULE_STEER_OFFSET,
+                Constants.BACK_LEFT_MODULE_STATUS_PERIOD,
+                Constants.BACK_LEFT_MODULE_ENCODER_UPDATE_PERIOD
         );
 
         backRightModule = Mk3SwerveModuleHelper.createFalcon500(
@@ -83,7 +89,9 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.BACK_RIGHT_MODULE_DRIVE_MOTOR,
                 Constants.BACK_RIGHT_MODULE_STEER_MOTOR,
                 Constants.BACK_RIGHT_MODULE_STEER_ENCODER,
-                Constants.BACK_RIGHT_MODULE_STEER_OFFSET
+                Constants.BACK_RIGHT_MODULE_STEER_OFFSET,
+                Constants.BACK_RIGHT_MODULE_STATUS_PERIOD,
+                Constants.BACK_RIGHT_MODULE_ENCODER_UPDATE_PERIOD
         );
 
         shuffleboardTab.addNumber("Gyroscope Angle", () -> getRotation().getDegrees());
